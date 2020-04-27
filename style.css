@@ -14,6 +14,9 @@ body {
     margin:0;
     font-family: 'Josefin Sans', sans-serif;
     font-size:16px;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -54,7 +57,7 @@ h1 > span {
 p {
     color:var(--Desaturated-Red);
     line-height:25px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
 
 form {
@@ -76,6 +79,9 @@ input {
 
 input::placeholder {
     color:var(--Desaturated-Red);
+    font-weight: 300;
+    font-family:'Josefin Sans', sans-serif;
+    font-size:16px;
 }
 
 input[type=text], select {
@@ -87,14 +93,27 @@ input[type=text], select {
     box-shadow: var(--Dark-Grayish-Red);
     border-radius: 4px;
     box-sizing: border-box;
+    font-size:16px;
+    font-weight:300;
+    
   }
 
-small {
-    font-size:12px;
-    color:var(--Soft-Red);
-    font-weight: 600;
-    margin-top: 20px;
-}
+  input:hover {
+    outline: none;
+    border-color: var(--Soft-Red);
+    box-shadow: 0 0 5px var(--Soft-Red); 
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--Soft-Red);
+    box-shadow: 0 0 5px var(--Soft-Red);
+    color:var(--Dark-Grayish-Red);
+    font-family: 'Josefin sans', sans-serif;
+    font-size:16px;
+    font-weight:600;
+  }
+
 
 .button {
     background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -108,9 +127,28 @@ small {
    
 }
 
+.button:hover {
+    background-image: linear-gradient(135deg, hsl( 0, 80%, 86%), hsl(0, 80%, 90%));
+    box-shadow: 0 10px 30px 2px var(--Desaturated-Red);
+    cursor: pointer;
+}
+
+small {
+    font-size:12px;
+    color:var(--Soft-Red);
+    padding-top:20px;
+    padding-left:20px;
+}
+
+.error-icon {
+    position: absolute;
+    top:15px;
+    right:110px;
+}
 
 .right {
     width:40%;
     background-image: url("images/hero-desktop.jpg");
     background-size:cover;    
 }
+
