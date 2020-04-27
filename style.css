@@ -37,16 +37,23 @@ margin:auto;
 }
 
 .logo {
- padding:50px 0 25px 0;
+ margin:50px 0 100px 200px;
+ width:200px;
+}
+
+.hero-mobile {
+    display:none;
 }
 
 h1 {
     color: var(--Dark-Grayish-Red);
     text-transform: uppercase;
-    letter-spacing:5px;
+    letter-spacing:10px;
     line-height: 60px;
     text-align: left;
     font-size:55px;
+    transform:translateX(-100%);
+    animation: fromleft 0.5s ease forwards;
 }
 
 h1 > span {
@@ -54,15 +61,33 @@ h1 > span {
     font-weight: 300;
 }
 
+@keyframes fromleft {
+    to {
+        transform: translateX(0);
+    }
+}
+
 p {
     color:var(--Desaturated-Red);
     line-height:25px;
     padding-bottom: 25px;
+    transform:translateX(100%);
+    opacity: 0;
+    animation: fromright 0.5s ease forwards ;
 }
+
+@keyframes fromright {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 form {
 
    position: relative;
+   padding-bottom: 50px;
    
 }
 
@@ -82,6 +107,10 @@ input::placeholder {
     font-weight: 300;
     font-family:'Josefin Sans', sans-serif;
     font-size:16px;
+}
+
+form.error input {
+	border: 2px solid hsl(0, 93%, 68%);
 }
 
 input[type=text], select {
@@ -138,17 +167,73 @@ small {
     color:var(--Soft-Red);
     padding-top:20px;
     padding-left:20px;
+    display: none;
 }
 
 .error-icon {
     position: absolute;
     top:15px;
     right:110px;
+    display:none;
+}
+
+form.error .error-icon {
+	display: block;
+}
+
+form.error small {
+	display: block;
 }
 
 .right {
     width:40%;
     background-image: url("images/hero-desktop.jpg");
     background-size:cover;    
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+
+    .left {
+        width:100%;   
+        
+    }
+
+    .inner {
+        max-width: 340px;
+        margin:auto;
+        }
+
+    .logo {
+        margin-left:40px;
+        width:100px;
+       }
+
+
+    .hero-mobile {
+        display: block;
+        width:100%;
+        margin:0;
+        
+    }
+
+    h1 {
+        text-align:center;
+        font-size:40px;
+    }
+
+    p {
+        text-align:center;
+        padding:10px;
+
+    }
+    .right {
+        display:none;
+    }
+
+  
+
+   
 }
 
