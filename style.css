@@ -113,7 +113,7 @@ form.error input {
 	border: 2px solid hsl(0, 93%, 68%);
 }
 
-input[type=text], select {
+input > select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -207,7 +207,8 @@ form.error small {
 
     .logo {
         margin-left:40px;
-        width:100px;
+        width:70px;
+        margin-bottom:40px;
        }
 
 
